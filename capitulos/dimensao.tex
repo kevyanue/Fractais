@@ -1,0 +1,75 @@
+\chapter{Conceito de dimensão}
+
+Normalmente entendemos dimensão como sendo 
+
+\begin{center}
+    \item \( dimensão(Pontos) = 0 \)
+    \item \( dimensão(Curvas) = 1 \)
+    \item \( dimensão(Superfícies) = 2 \)
+    \item \(\vdots \)
+\end{center}    
+
+Mas essas dimensão são dimensões \textit{topológicas}
+
+\section{Dimensão Topológica X Dimensão espacial}
+
+
+Dimensão espacial é dada por
+
+\[ N = R^{-D} \]
+\[ \log{N} = \log{R^{-D}} \]
+\[ \log{N} = D\log{\frac{1}{R}} \]
+\begin{equation}
+     D = \frac{\log{N}}{\log{R^{-1}}}
+\end{equation}
+
+Onde
+
+N = Numero de figuras,
+R = Fator de redução,
+D = Dimensão espacial
+
+\begin{definition}[Fractal]
+\label{frac}
+Um fractal é uma figura onde a dimensão espacial é estritamente maior que a dimensão topológica
+\end{definition}
+
+\section{Exemplos}
+\section{Contagem de caixas}
+
+\[ D = \mathlarger{
+        \lim_{
+            l\to0
+            } 
+        \frac{
+            \log{N}
+        }{
+            \log{
+                \frac{
+                    \delta
+                    }{
+                    l
+                }
+            }
+        }
+    }  \]
+
+\begin{table}[h]
+    \centering
+        \begin{tabular}{| c | c | c | c |}
+             \multicolumn{4}{c}{Samambaia} \\
+             \hline
+             l = r & $\delta/l$ & N & $\log{N}/\log{\frac{\delta}{l}}$ \\
+             \hline
+             128 & 8 & 27 & 1,5849 \\
+             \hline
+             64 & 16 & 90 & 1,6229 \\
+             \hline
+             32 & 32 & 315 & 1,6598 \\
+             \hline 
+        \end{tabular}
+    \caption{Samambaia}
+    \label{tab:sam}
+\end{table}
+
+\section{Execícios}
