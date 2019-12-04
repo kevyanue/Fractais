@@ -8,7 +8,7 @@
 \usepackage[thinlines]{easytable}
 \usepackage[utf8]{inputenc}
 \usepackage[portuguese]{babel}
-\usepackage{hyperref}
+\usepackage[final]{hyperref}
 
 \newtheorem{theorem}{Teorema}
 \newtheorem{corollary}{Corolário}[theorem]
@@ -30,27 +30,15 @@
 
 \maketitle
 
-\chapter*{Prefácio}\label{pre}
-
-Este livro vem de anotações expandidas de aulas da matéria \textit{tópicos de matemática II}, ministrada no segundo semestre de 2019 pela professora Dra. Elizabeth Wegner Karas do Departamento de matemática da Universidade Federal do Paraná. Vem também dos conhecimentos adquiridos sobre curvas algérbicas e teoria de categorias no decorrer de minha iniciação cientifica orientado pelo professor Dr. Edson Ribeiro Alvares. 
-
-Comecei a escrever este livro com o mesmo intuito da matéria: Um curso de fractais que não seja tão formal nem tão inicial e que não precise de muitos pré requisitos. Porém, encontrei-me ao mesmo encantado pela complexidade dos fractais. Junto com curvas algébricas e teoria de categorias, resolvi aumentar o recorte inicial do livro para uma apresentação categórica sobre, em especifico, curvas fractais.
-
-Como todo livro da areá de exatas, existe um compromisso que deve ser feito entre didática, profundidade e formalismo. Didática é minha primeira preocupação. Formalismo e profundidade aparecem quando a intuição não é suficiente ou quando se entram necessários para o ensino de uma nova intuição. Alguns conceitos básicos serão relembrados, porém nem sempre com todo rigor.
-
-Destino esse livro em especial a alunos do primeiro ano da graduação, ou que tenham conhecimentos de calculo e álgebra linear. Os primeiros capítulos são originários de anotações de aula e são destinados a quem procura um primeiro curso sobre fractais.
-
-Os últimos capítulos decorrem de minha pesquisa junto ao professor Edson e são uma tentativa de explorar fractais com uma perspectiva diferente
-
-De maneira geral, os exemplos contidos aqui explicam mais que as definições. É a partir deles que vai ocorrer os aprofundamentos e o verdadeiro ensino dos conceitos. 
+\include{capitulos/prefacio}
 
 \tableofcontents
 
-\input{capitulos/introducao.tex}
-\input{capitulos/processos_geometricos.tex}
-\input{capitulos/dimensao.tex}
-\input{capitulos/ifs.tex}
-\input{capitulos/sis_dim_complexos.tex}
+\include{capitulos/introducao}
+\include{capitulos/processos_geometricos}
+\include{capitulos/dimensao}
+\include{capitulos/ifs}
+\include{capitulos/sis_dim_complexos}
 
 \chapter{Um pouco de teoria de categorias}
 
