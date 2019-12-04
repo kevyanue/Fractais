@@ -1,0 +1,385 @@
+\chapter{Fractais gerados por IFS}
+\section{Transformações lineares}
+\subsection{Definição}
+
+Seja \(U\) espaço vetorial sobre um corpo \( \mathbb{K} \), então
+\[T:U \longrightarrow U\]
+\\
+é uma transformação linear se:
+
+\begin{equation}
+    T(\Vec{u} + \Vec{v}) = T(\Vec{u}) + T(\Vec{v})\ , \ \Vec{u}, \Vec{v} \in U
+\end{equation}
+
+\begin{equation}
+    T(\alpha\Vec{u}) = \alpha T(\Vec{u}) \ , \ \alpha \in \mathbb{K}
+\end{equation}
+
+\begin{theorem}
+se \(T\) é linear então \( T(0) = 0 \)
+\end{theorem}
+
+\begin{remark}
+Neste capitulo trabalharemos em \( \mathbb{R}^{n} \), frequentemente em \( \mathbb{R}^{2} \) com a base canônica. T será sempre dado por:
+\[ T: \mathbb{R}^n \longrightarrow \mathbb{R}^n \]
+para algum \(n\)
+\end{remark}
+
+\subsection{Exemplos}
+
+Tomemos T definido por
+
+\[ T: \mathbb{R}^2 \longrightarrow \mathbb{R}^2 \]
+\[ T(x, y) = (x, -y) =
+  \left[ 
+  {
+    \begin{array}{c}
+    x \\
+   -y \\
+    \end{array} 
+    } 
+  \right]
+\]
+note que aplicando as transformações nas bases canônicas obtemos
+\[
+T(1,0) = 
+(1, 0) =
+\left[ 
+    {
+        \begin{array}{c}
+            1      \\
+            0      \\
+        \end{array} 
+    } 
+\right]
+\]
+\[
+T(0,1) = 
+(0, -1) =
+\left[ 
+    {
+        \begin{array}{c}
+            0      \\
+            -1      \\
+        \end{array} 
+    } 
+\right]
+\]
+E que 
+\[ T(x, y) =
+    \left[ 
+    {
+        \begin{array}{c c}
+            1 &  0 \\
+            0 & -1 \\
+        \end{array} 
+    } 
+    \right]
+    \left[ 
+    {
+        \begin{array}{c}
+            x \\
+            y \\
+        \end{array} 
+    } 
+    \right]
+    =
+    \left[ 
+    {
+        \begin{array}{c}
+            x \\
+            -y \\
+        \end{array} 
+    } 
+    \right]
+\]
+ou seja, \textbf{as imagens das transformações na base canônica de \( \mathbb{R}^{2} \) são precisamente as colunas da matriz que multiplica (x, y)}
+
+\begin{remark}
+
+mais genericamente, podemos descrever uma transformação \(T\) qualquer como
+
+
+\[
+    T: \mathbb{R}^{n} \longrightarrow \mathbb{R}^{n} 
+\]
+\[
+    T(x) = A_{n \times n}x_{n \times 1} 
+\]
+Onde \(x\) é vetor do \(\mathbb{R}^{n}\) e \( A_{n \times n}\) é uma matriz \(n\) por \(n\).
+
+Podemos definir \(A_{n x n}\) a partir das imagens de \( (1,0) \) e \( (0,1) \) como vetores coluna:
+\[
+    \left[ 
+        {
+            \begin{array}{c c}
+                |\,    & |\,      \\
+                T(1,0) & T(0,1)   \\
+                |\,    & |\,      \\
+            \end{array} 
+        } 
+    \right]
+\]
+\end{remark}
+
+\section{Contração e Expansão}
+\subsection{Definição}
+\begin{definition}[contração]
+    em geral, definimos que uma transformação \( T \) é uma contração quando:
+        \[ 
+        \exists \alpha \in [ \, 0,1\,) \, \, tal\, que
+        \]
+        \[
+        \parallel T(u) - T(v) \parallel \: \leq \alpha \parallel u -v \parallel
+        \]
+    E definimos uma expansão de forma análoga, apenas invertendo o sinal da desigualdade.
+    
+\end{definition}
+
+\subsection{exemplos}
+
+\begin{proposition}\label{contract}
+    Dado uma transformação T:
+    \[
+        T: \mathbb{R}^2 \longrightarrow \mathbb{R}^2
+    \]
+    \begin{equation}\label{escalar}
+        T(x, y) = 
+          \alpha
+          \left[ 
+            {
+                \begin{array}{c c}
+                    1 & 0 \\
+                    0 & 1 \\
+                \end{array} 
+            } 
+          \right]
+          \left[ 
+            {
+                \begin{array}{c}
+                    x \\
+                    y \\
+                \end{array} 
+                } 
+           \right]
+           \, , \: \alpha \in \mathbb{R}
+    \end{equation}
+    se \( \alpha \in (0,1)\), então T é uma contração.
+\end{proposition}
+Neste caso, \(\alpha\) é o \textbf{Fator de contração} dessa transformação e ele que é usado no calculo da dimensão.
+pode acontecer de queremos contrair os eixos de maneiras diferentes, como em
+\[
+E(x, y) = 
+  \left[ 
+    {
+        \begin{array}{c c}
+            \beta & 0      \\
+            0     & \delta \\
+        \end{array} 
+    } 
+  \right]
+  \left[ 
+    {
+        \begin{array}{c}
+            x \\
+            y \\
+        \end{array} 
+        } 
+   \right]
+   ,
+   \quad \beta,\delta \in [\,0, 1\,)
+\]
+Mas podemos visualizar \(E\) como:
+\[
+    E(x,y) = (\beta x, \delta y)
+\]
+Neste caso, o fator de contração é o \(min\{\beta, \delta\}\)
+\section{Rotação}
+\subsection{Definição}
+seja
+
+\[
+    T: \mathbb{R}^2 \longrightarrow \mathbb{R}^2
+\]
+\[
+    T(x) = R_{n \times n}x_{n \times 1}
+\]
+Usando o mesmo método de antes, podemos definir \(R\) a partir de suas imagens na base ortonormal
+
+\begin{gather*}
+    R(1,0) = R(\cos{\theta}, \sin{\theta})\\
+    R(0,1) = R( - \sin{\theta}, \cos{\theta})
+\end{gather*}
+Então temos que
+\begin{equation}
+    R(x, y) = 
+    \left[ 
+    {
+        \begin{array}{c c}
+            \cos{\theta} & -\sin{\theta} \\
+            \sin{\theta} &  \cos{\theta} \\
+        \end{array} 
+    } 
+    \right]
+    \left[ 
+    {
+        \begin{array}{c}
+            x \\
+            y \\
+        \end{array} 
+        } 
+    \right]
+\end{equation}
+
+\subsection{exemplos}
+
+\section{Transformações afins}
+
+\subsection{Translação}
+Seja
+\[
+    T: \mathbb{R}^2 \longrightarrow \mathbb{R}^2
+\]
+\begin{equation}
+    T(x, y) = 
+    \left[ 
+    {
+        \begin{array}{c}
+            x \\
+            y \\
+        \end{array} 
+        } 
+    \right]
+    +
+    \left[ 
+    {
+        \begin{array}{c}
+            a_1 \\ 
+            a_2 \\
+        \end{array} 
+    } 
+    \right]
+    ,\quad a_1, a_2 \in \mathbb{R}
+\end{equation}
+
+\subsection{definição}
+
+\begin{definition}
+
+Uma \textbf{transformação afim} é uma transformação linear que admite translação e tem a forma:
+
+\end{definition}
+
+\begin{equation}
+    A(x, y) = 
+    \left[ 
+    {
+        \begin{array}{c c}
+            \cos{\theta} & -\sin{\theta} \\
+            \sin{\theta} &  \cos{\theta} \\
+        \end{array} 
+    } 
+    \right]
+    \left[ 
+    {
+        \begin{array}{c}
+            \alpha  x \\
+            \beta   y \\
+        \end{array} 
+        } 
+    \right]
+    +
+    \left[ 
+    {
+        \begin{array}{c}
+            a_1 \\ 
+            a_2 \\
+        \end{array} 
+    } 
+    \right]
+\end{equation}
+e se \( \beta = \delta\)
+
+\begin{equation}
+    A(x, y) =
+    \alpha
+    \left[ 
+    {
+        \begin{array}{c c}
+            \cos{\theta} & -\sin{\theta} \\
+            \sin{\theta} &  \cos{\theta} \\
+        \end{array} 
+    } 
+    \right]
+    \left[ 
+    {
+        \begin{array}{c}
+            x \\
+            y \\
+        \end{array} 
+        } 
+    \right]
+    +
+    \left[ 
+    {
+        \begin{array}{c}
+            a_1 \\ 
+            a_2 \\
+        \end{array} 
+    } 
+    \right]
+\end{equation}
+
+\section{Sistemas iterativos de transformações}
+
+\subsection{Exemplos}
+
+Dado um vetor inicial \( A \subset \mathbb{R}^2 \) e \( M \) contrações afins:
+\[ 
+    T_i: \mathbb{R}^2 \longrightarrow \mathbb{R}^2, \quad i = 1,2,...,M 
+\]
+Considere
+\begin{equation}
+    \mathlarger W(A) = \bigcup_{i = 1}^{M} T_i(A)
+\end{equation}
+e que
+\begin{equation}
+    W^n =
+    \left\{
+    	\begin{array}{l l}
+    		 A                         & \mbox{se } x = 0 \\
+    		 (W^{n} \circ W^{n-1})(A)  & \mbox{se } x > 0
+    	\end{array}
+    \right.
+\end{equation}
+Onde \( T_i(A) = \{ T_i(x) \mid x \in A \} \)
+\begin{definition}
+
+Um fractal gerado por IFS é um conjunto \( X \subset  \mathbb{R}^2 \) definido por 
+
+\[ 
+    \mathlarger{
+        X = \lim_{x \rightarrow{\infty}} W^k(A)
+    }  
+\]
+
+\end{definition}
+
+\begin{theorem}\label{idenpotent}
+Um fractal X do tipo IFS é o ponto fixo de uma contração W, ou seja,
+\[ 
+    W(X) = X 
+\] 
+
+\end{theorem}
+
+\section{Execícios}
+
+\begin{enumerate}
+    \item Prove:
+        \begin{enumerate}
+            \item A proposição \ref{contract};
+            \item O teorema \ref{idenpotent};
+        \end{enumerate}
+    
+\end{enumerate}

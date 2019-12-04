@@ -1,0 +1,137 @@
+\chapter{Sistemas Dinâmicos Complexos}
+
+\section{Complexos}
+
+Definimos o conjunto dos números complexos como:
+\[
+    \mathbb{C} = \{ x + iy\, |\, x,y \in \mathbb{R} \} 
+\]
+\[
+    i = \sqrt{-1} \notin \mathbb{R}
+\]
+
+\subsection{Forma cartesiana}
+
+escrevemos \(z\) como:
+\[
+    z = x + iy
+\]
+E tal como os números cartesianos, podemos descrever um numero complexo por uma dupla \((x,y)\).\\
+O mesmo se aplica a calcular a distancia de um ponto a origem, ou seja, seu \textit{modulo}
+\[
+    r = |z| = \sqrt{x^2 + y^2}
+\]
+E em especial
+\[
+    |z^n| =  |z|^n
+\]
+\subsection{Forma polar}
+
+Podemos descrever um ponto no plano por um angulo \(\theta\) e uma distancia \(r\) = \(|z|\). E damos \(z\) por um dupla \((r, \theta)\) 
+
+\subsection{forma exponencial}
+
+\begin{equation}
+    \mathlarger{e^{i\theta} = \cos{\theta} + i\sin{\theta}}
+\end{equation}
+para radiciação,
+\begin{align*}
+    &z = re^{i \theta} \\
+    &z^n = (re^{i \theta})^n\\
+    &z^n = r^n e^{i n \theta} \\
+\end{align*}
+
+
+\section{Sistemas dinâmicos}
+\subsection{Sistemas dinâmicos da função \(z^2\)}
+
+Considere a função:
+
+\[ 
+    f: \mathbb{C} \longrightarrow \mathbb{C} 
+\]
+\[ 
+    f(z) := z^2
+\]
+Dado \(z_ 0\) e a sequencia \(\{z_k\}\) definida por:
+\[
+    z_k = f(z_{k-1})
+\]
+\begin{align*}
+    z_0 &\\
+    z_1 &= f(z_0) = f^2(z_0) = (z_0)^2 \\
+    z_2 &= f(z_1) = f^3(z_0) = (z_0)^4 \\
+    \vdots \\
+    z_k &= f(z_{k-1}) = f^k(z_0) = (z_0)^{2^k} 
+\end{align*}
+
+\begin{definition}[Orbita de \(z_0\)]
+    Dizemos que a Orbita de \(z_0\) para alguma função \(f\) é o conjunto \(\mathcal{O}(z_0)\) definido por
+    \[
+        \mathcal{O}(z_0) := \{z_0, z_1, ..., z_k, ...\}
+    \]
+\end{definition}
+\begin{definition}[ponto fixo de \(f(z)\)]
+    Dizemos que algum \( z \) é ponto fixo de \(f(z)\) quando
+    \[ 
+        f(z) = z 
+    \]
+\end{definition}
+Vemos por exemplo que
+\[
+    \mathcal{O}(1) = {1}
+\]
+ou seja, 1 é ponto fixo de \( f(z) = z^2 \)
+\[
+    \mathcal{O}(-1) = \{-1, 1\}
+\]
+\[
+    \mathcal{O}\left(\frac{1}{\sqrt{2}} (1 + i)\right) = \left\{ \frac{1}{\sqrt{2}} (1 + i), i , -1 , 1 \right\}
+\]
+\[
+    r = \sqrt{\frac{1}{2}} = \frac{1}{\sqrt{2}} \leq 1
+\]
+Da forma análoga a qual definimos a orbita de um numero \(z_0\), podemos definir uma \textit{Orbita regressiva}, que denotaremos por \(\mathcal{O}_{-}\).
+\begin{definition}[Orbita regressiva de \(z_0\)]
+    A orbita regressiva é a sequencia {\(z_{-k}\)} dada por:
+    \[
+        f(z_{-k}) = z_{-k + 1}
+    \]
+\end{definition}
+
+\section{Execícios}
+
+\chapter{Julia, Mandebrot e seus Conjuntos}
+
+\section{Exercícios}
+
+\begin{enumerate}
+    \item Prove:
+        \begin{enumerate}
+            \item 
+                Se \(z_0\) é repulsor, então \(z_0 \in \mathbf{J}\)
+            \item
+                Se \(x_i \in \mathcal{O}(x_i)\), então, \(\lambda_{x_i} = \lambda_{x_j}, \forall i,j\)
+            \item
+                Existe apenas uma orbita \( \mathcal{O}(z)\), tal que \(\lambda_{z}\) não é repulsora, para \(f(z) = z^2 + c \)
+            \item 
+                Para \( c = -2 \in \mathbf{M} \)
+            \item 
+                \(f_c \) tem orbita atratora ou superatratora \( \Longleftrightarrow |c-1| < \frac{1}{4}\)
+            \item
+                \(f_c \) tem orbita indiferente de periodo 2 \( \Longleftrightarrow |c-1| = \frac{1}{4}\)
+            \item
+                Se \(z\) é ponto periódico de período \(n\) de \(f_c\), então \(z\) é ponto periódico de período \(nm, \forall m \in \mathbb{N} \)
+                \\
+                ou seja,
+                \\
+                \[ 
+                    f_c^n(z) = z \Longrightarrow f_c^{nm}(z) = z, \forall m \in \mathbb{N} 
+                \]
+        \end{enumerate}
+    \item
+        Mostre que se \( f_c^n(z) = z \) e \(f_c(z) = z \), então 
+        \(f_c(z) - z \) é um fator de \( f_c^n(z) - \overline{z} \)
+        
+        
+\end{enumerate}
